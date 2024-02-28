@@ -51,7 +51,7 @@ listing = Listing.create(
   location: "raffles place",
   price_per_night: 200,
   category: "condo",
-  description: "CBD city view",
+  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 1
 )
 
@@ -63,7 +63,7 @@ listing1 = Listing.create(
   location: "raffles place",
   price_per_night: 800,
   category: "condo",
-  description: "Marina bay view",
+  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 3
 )
 
@@ -75,7 +75,7 @@ listing2 = Listing.create(
   location: "kovan",
   price_per_night: 200,
   category: "HDB",
-  description: "Cosy heartland abode",
+  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 2
 )
 
@@ -87,7 +87,7 @@ listing3 = Listing.create(
   location: "woodlands",
   price_per_night: 500,
   category: "landed",
-  description: "Convenient destination near JB. Great location.",
+  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 4
 )
 
@@ -99,7 +99,7 @@ listing4 = Listing.create(
   location: "changi",
   price_per_night: 100,
   category: "landed",
-  description: "Holiday chalet at Changi village",
+  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 7
 )
 
