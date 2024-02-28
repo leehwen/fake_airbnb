@@ -22,4 +22,9 @@
   <p><%= @booking.listing.user.first_name %></p>
 </div>
 
+<%= link_to "Delete Booking",
+    booking_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
 <%= link_to "Back to Bookings", bookings_path %>
