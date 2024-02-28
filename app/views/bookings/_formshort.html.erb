@@ -1,0 +1,6 @@
+<%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :no_of_guests %>
+  <%= f.submit 'Reserve' %>
+<% end %>
