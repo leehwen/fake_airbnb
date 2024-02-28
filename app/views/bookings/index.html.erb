@@ -1,7 +1,10 @@
 <div>
 <% @bookings.each do |booking| %>
-  <p><%= booking.listing.location %></p>
-  <p><%= booking.listing.user.first_name %></p>
-  <p><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+  <div>
+    <p><%= booking.listing.location %></p>
+    <p><%= booking.listing.user.first_name %></p>
+    <p><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+    <%= link_to "See Details", booking_path(booking) %>
+  </div>
 <% end %>
 </div>
