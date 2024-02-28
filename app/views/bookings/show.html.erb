@@ -1,0 +1,25 @@
+<div>
+  <h2>Your trip</h2>
+  <p><%= @booking.start_date %></p>
+  <p><%= @booking.end_date %></p>
+  <p><%= @booking.no_of_guests %></p>
+  <p><%= @booking.host_approved %></p>
+</div>
+
+<div>
+  <h3>Price of booking table</h3>
+  <p><%= @booking.listing.price_per_night %></p>
+  <p>Calculation of the duration, total price etc</p>
+</div>
+
+<div>
+  <h2>Accommodation booked</h2>
+  <p><%= @booking.listing.category %></p>
+  <p><%= @booking.listing.no_of_rooms %></p>
+  <p><%= @booking.listing.location %></p>
+  <p><%= @booking.listing.no_of_guests %></p>
+  <p><%= @booking.listing.description %></p>
+  <p><%= @booking.listing.user.first_name %></p>
+</div>
+
+<%= link_to "Back to Bookings", bookings_path %>
