@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 p-3">
+      <div class="listingdes border-bottom p-5">
+        <%# <h3 class="fw-bold mb-2"><%= @listing.subtitle.titleize %><%= @listing.description.titleize %>, <%= @listing.location.titleize%></h3>
+        <h5 class="fw-bold"><%= @listing.no_of_guests %>
+         <% if @listing.no_of_guests > 1%>
+         guests
+         <% else %>
+         guest
+         <% end %> . <%= @listing.no_of_rooms %> 
+        <% if @listing.no_of_rooms > 1%>
+         rooms
+         <% else %>
+         room
+         <% end %></h5>
+      </div>
+
+      <div class="listinguser d-flex align-items-center border-bottom p-5">
+        <div>
+          <%= image_tag "airbnb_logo.png", class:"avatar" %>
+          <%# <%= cl_image_tag @user.profile_picture.key, class:"avatar" %>
+        </div>
+        <div>
+          <p class="ms-3 p-0 m-0 fw-bold">Hosted by <%= @user.first_name %> </p>
+        </div>
+      </div>
+
+      <div class="listingfulldes p-5">
+        <p>It is a long established fact that a reader will be distracted by the readable 
+        content of a page when looking at its layout. The point of using Lorem Ipsum is 
+        that it has a more-or-less normal distribution of letters, as opposed to using 
+        'Content here, content here', making it look like readable English.</p> 
+        <%# delete the above after that %>
+        <p><%= @listing.description%></p>
+      </div>
+    </div>
+  </div>
+</div>
