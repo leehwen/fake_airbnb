@@ -1,30 +1,120 @@
-<div>
-  <h2>Your trip</h2>
-  <p><%= @booking.start_date %></p>
-  <p><%= @booking.end_date %></p>
-  <p><%= @booking.no_of_guests %></p>
-  <p><%= @booking.host_approved %></p>
+<div class="internal-nav px-5 mb-3">
+  <%= link_to bookings_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Back to Bookings</span>
+  <% end %>
 </div>
 
-<div>
-  <h3>Price of booking table</h3>
-  <p><%= @booking.listing.price_per_night %></p>
-  <p>Calculation of the duration, total price etc</p>
+<div class="px-5">
+  <% if @booking.host_approved %>
+    <h1>You're going to <%= @booking.listing.location %>!</h1>
+  <% else %>
+    <h1>Your booking is pending host confirmation</h1>
+  <% end %>
+  <div>
+    <p>
+      <strong>Reservation Code: </strong><%= @booking.id %>.
+      <% if @booking.host_approved %>
+        <a href="#">View Receipt</a> or
+      <% end %>
+      <%= link_to "Cancel the Booking",
+        booking_path(@booking),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+       if you can't make it due to unforeseen circumstances.
+    </p>
+  </div>
 </div>
 
-<div>
-  <h2>Accommodation booked</h2>
-  <p><%= @booking.listing.category %></p>
-  <p><%= @booking.listing.no_of_rooms %></p>
-  <p><%= @booking.listing.location %></p>
-  <p><%= @booking.listing.no_of_guests %></p>
-  <p><%= @booking.listing.description %></p>
-  <p><%= @booking.listing.user.first_name %></p>
+<div class="d-flex px-5">
+  <div class="col-8 p-4 border bg-white">
+
+    <div class="d-flex justify-content-between">
+      <div>
+        <p class="m-0"><strong>Guests</strong></p>
+        <p>Share the trip itinerary with your <%= @booking.no_of_guests %> guests.</p>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="cta-button">Manage Guests</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col"><strong>Check In</strong></div>
+      <div class="col"><%= @booking.start_date %></div>
+      <div class="col"><strong>Check Out</strong></div>
+      <div class="col"><%= @booking.end_date %></div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+      <div class="w-25"><strong>Address</strong></div>
+      <div class="flex-grow-1"><%= @booking.listing.location %></div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+      <div class="w-25"><strong>House Rules</strong></div>
+      <div class="flex-grow-1">Check in after 2pm and check out before 12pm.</div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column align-items-center col-4 p-4 border bg-white">
+    <% if @booking.listing.user.profile_picture.attached? %>
+      <%= cl_image_tag @booking.listing.user.profile_picture.key, class: "avatar" %>
+    <% else %>
+      <%= image_tag "user_vector.png", class: "avatar" %>
+    <% end %>
+    <p>Your host, <strong><%= @booking.listing.user.first_name%></strong></p>
+    <p>Have a question about your reservation? The best way to get information is to ask your host directly.</p>
+    <div>
+      <button class="cta-button">Message Host</button>
+    </div>
+  </div>
 </div>
 
-<%= link_to "Delete Booking",
-    booking_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class="d-flex px-5 my-3">
+  <div class="p-4 col-4 bg-white border">
+    <p><strong>Price details</strong></p>
+    <ul class="price-table p-0 m-0">
+      <li>
+        <% duration = (@booking.end_date - @booking.start_date).to_i %>
+        <% per_night_price = @booking.listing.price_per_night %>
+        <p>$<%= per_night_price %> x <%= duration %> nights</p>
+        <p><%= "$#{duration*per_night_price}" %></p>
+      </li>
+      <li>
+        <p>Cleaning fee</p>
+        <p>$50</p>
+      </li>
+      <li>
+        <p>Service fee</p>
+        <p>$10</p>
+      </li>
+      <li>
+        <p>Occupancy taxes and fees</p>
+        <p>$5</p>
+      </li>
+      <li>
+        <p>Credits</p>
+        <p>$0</p>
+      </li>
+      <li>
+        <p><strong><%= "Total(USD)" %></strong></p>
+        <p><strong><%= "$#{duration*per_night_price + 65}" %></strong></p>
+      </li>
+    </ul>
+  </div>
 
-<%= link_to "Back to Bookings", bookings_path %>
+  <div class="p-4 col-8 bg-white border d-flex justify-content-between">
+    <div>
+      <p><strong>Property details</strong></p>
+      <p>Title: <%= @booking.listing.title %></p>
+      <p>Subtitle: <%= @booking.listing.subtitle %></p>
+      <p>Description: <%= @booking.listing.description %></p>
+      <p>Address: <%= @booking.listing.location %></p>
+      <p><%= "#{@booking.listing.no_of_rooms} rooms for #{@booking.listing.no_of_guests} guests"%></p>
+    </div>
+    <div class="border">
+      Image of listing dont know how to add
+    </div>
+  </div>
+</div>
