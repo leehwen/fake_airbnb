@@ -1,0 +1,8 @@
+<% paymentmode = %w[Visa Mastercard] %>
+<%= simple_form_for(booking) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :no_of_guests %>
+  <%= f.input :payment, collection: paymentmode %>
+  <%= f.submit "Pay and Reserve" %>
+<% end %>

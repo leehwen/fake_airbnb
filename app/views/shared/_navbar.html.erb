@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light border-bottom py-4 px-5">
+<nav class="navbar navbar-expand-lg bg-light border-bottom mb-5 py-4 px-5">
   <div class="container-fluid">
     <a class="logo" href=<%= root_path %>><%= image_tag "airbnb_logo.png", alt: "Airbnb", width: 100 %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
           </li>
           <li class="nav-item dropdown ps-4">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= cl_image_tag current_user.profile_picture.key, class: "avatar", alt: "dropdown menu" %>
+              <%# <%= cl_image_tag current_user.profile_picture.key, class: "avatar", alt: "dropdown menu" %> %>
             </a>
             <div class="dropdown-menu dropdown-menu-end ps-4" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>

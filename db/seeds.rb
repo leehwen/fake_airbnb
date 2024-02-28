@@ -45,6 +45,8 @@ guest1 = User.create(
 
 listing = Listing.create(
   user: host0,
+  title: "Lorem nulla deserunt adipisicing anim duis minim cillum esse incididunt mollit ad aliqua cillum.",
+  subtitle: "nisi ut cillum culpa",
   no_of_rooms: 1,
   location: "raffles place",
   price_per_night: 200,
@@ -55,6 +57,8 @@ listing = Listing.create(
 
 listing1 = Listing.create(
   user: host0,
+  title: "Amet mollit excepteur non qui est et minim.",
+  subtitle: "dolore ea ut aliquip",
   no_of_rooms: 3,
   location: "raffles place",
   price_per_night: 800,
@@ -65,6 +69,8 @@ listing1 = Listing.create(
 
 listing2 = Listing.create(
   user: host0,
+  title: "Lorem officia dolor nisi tempor irure est.",
+  subtitle: "nulla mollit labore velit",
   no_of_rooms: 2,
   location: "kovan",
   price_per_night: 200,
@@ -75,6 +81,8 @@ listing2 = Listing.create(
 
 listing3 = Listing.create(
   user: host1,
+  title: "Dolore anim velit incididunt voluptate laborum consequat.",
+  subtitle: "dolore eiusmod qui in",
   no_of_rooms: 4,
   location: "woodlands",
   price_per_night: 500,
@@ -85,6 +93,8 @@ listing3 = Listing.create(
 
 listing4 = Listing.create(
   user: host1,
+  title: "Nulla cillum ad magna ipsum.",
+  subtitle: "qui amet pariatur commodo",
   no_of_rooms: 7,
   location: "changi",
   price_per_night: 100,
@@ -95,6 +105,8 @@ listing4 = Listing.create(
 
 listing5 = Listing.create(
   user: host1,
+  title: "Non enim sint fugiat nisi deserunt Lorem nulla irure irure labore veniam ut.",
+  subtitle: "do occaecat in non",
   no_of_rooms: 3,
   location: "sentosa",
   price_per_night: 800,
@@ -105,6 +117,8 @@ listing5 = Listing.create(
 
 listing6 = Listing.create(
   user: host1,
+  title: "Non enim sint fugiat nisi deserunt Lorem nulla irure irure labore veniam ut.",
+  subtitle: "quis mollit sint enim",
   no_of_rooms: 2,
   location: "orchard",
   price_per_night: 650,
