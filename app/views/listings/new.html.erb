@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for(@listing) do |f| %>
+    <%= f.input :category, collection: Listing::CATEGORY %>
+    <%= f.input :no_of_rooms %>
+    <%= f.input :location %>
+    <%= f.input :price_per_night %>
+    <%= f.input :no_of_guests %>
+    <%= f.input :description %>
+    <%= f.association :user %>
+    <%= f.input :images, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

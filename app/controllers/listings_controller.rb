@@ -3,11 +3,25 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    raise
+  end
+
+  def new
+    @listing = Listing.new
+  end
+
+  def create
+    @listing = Listing.new(params_listing)
+    @listing.save
   end
 
   def show
     @listing = Listing.find(params[:id])
-    @user=User.find(@listing.user_id)
+    @user = User.find(@listing.user_id)
+  end
+
+  private
+
+  def params_listing
+    params.require(:listing).permit(:category, :no_of_rooms, :location, :price_per_night, :no_of_guests, :description, :user_id, images: [])
   end
 end
