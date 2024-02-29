@@ -6,9 +6,9 @@
   <div>
     <%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
       <%= f.hidden_field :listing_id, :value => @listing.id %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.input :no_of_guests %>
+      <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :no_of_guests, collection: 1..10, selected: 1 %>
       <%= f.submit 'Reserve', class: "cta-button w-100" %>
     <% end %>
   </div>
