@@ -55,5 +55,10 @@
         <p><%= @listing.description%></p>
       </div>
     </div>
+
+    <div class="col-4">
+      <%= render '/bookings/formshort', booking: Booking.new, listing: @listing %>
+    </div>
   </div>
 </div>
+
