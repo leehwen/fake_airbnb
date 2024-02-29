@@ -77,9 +77,9 @@
     <ul class="price-table p-0 m-0">
       <li>
         <% duration = (@booking.end_date - @booking.start_date).to_i %>
-        <% per_night_price = @booking.listing.price_per_night %>
-        <p>$<%= per_night_price %> x <%= duration %> nights</p>
-        <p><%= "$#{duration*per_night_price}" %></p>
+        <% price_per_night = @booking.listing.price_per_night %>
+        <p>$<%= price_per_night %> x <%= duration %> nights</p>
+        <p><%= "$#{duration*price_per_night}" %></p>
       </li>
       <li>
         <p>Cleaning fee</p>
@@ -99,7 +99,7 @@
       </li>
       <li>
         <p><strong><%= "Total(USD)" %></strong></p>
-        <p><strong><%= "$#{duration*per_night_price + 65}" %></strong></p>
+        <p><strong><%= "$#{duration*price_per_night + 65}" %></strong></p>
       </li>
     </ul>
   </div>

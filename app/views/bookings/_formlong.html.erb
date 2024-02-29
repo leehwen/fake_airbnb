@@ -1,9 +1,27 @@
 <% paymentmode = %w[Visa Mastercard] %>
 <%= simple_form_for(booking) do |f| %>
   <%= f.hidden_field :listing_id, :value => params[:booking][:listing_id] %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :no_of_guests %>
+
+  <h2 class="fs-4"><strong>Your trip</strong></h2>
+  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :no_of_guests, collection: 1..10 %>
+
+  <h2 class="fs-4"><strong>Choose how to pay</strong></h2>
   <%= f.input :payment, collection: paymentmode %>
-  <%= f.submit "Pay and Reserve" %>
+
+  <hr class="my-3">
+
+  <div>
+    <p><strong>Cancellation policy: Moderate</strong></p>
+    <p>Cancel up to 5 days before check-in and get a full refund.</p>
+    <p>Cancel within 5 days of your trip and the first night is non-refundable,
+        but 50% of the remaining fees for the remaining nights are refundable.
+        Service fees are refundable if cancellation happens before check-in and
+        within 48 hours of booking.
+    </p>
+    <p class="mt-5">I agree to the terms and conditions stated above.</p>
+  </div>
+
+  <%= f.submit "Pay and Reserve", class: "cta-button"%>
 <% end %>
