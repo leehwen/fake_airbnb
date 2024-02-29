@@ -12,15 +12,15 @@
       </div>
     <% else %>
       <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-6 img-card rounded-end rounded-4" style="background-image:asset-url('paris.jpg')"></div>
+        <div class="col-6 img-card rounded-end rounded-4" style="background-image:url('<%= asset_path('/images/paris.jpg')%>')"></div>
         <div class="col-6">
           <div class="grid text-center" style="column-gap: 8px">
-            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
-            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
-            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
-            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
+            <div class="g-col-6 img-small" style="background-image:url('<%= asset_path('/images/paris.jpg')%>')"></div>
+            <div class="g-col-6 img-small" style="background-image:url('<%= asset_path('/images/paris.jpg')%>')"></div>
+            <div class="g-col-6 img-small" style="background-image:url('<%= asset_path('/images/paris.jpg')%>')"></div>
+            <div class="g-col-6 img-small" style="background-image:url('<%= asset_path('/images/paris.jpg')%>')"></div>
           </div>
-        </div><%= image_tag "paris.jpg", alt: "Listing Image"%>
+        </div>
     <% end %>
   </div>
 
@@ -43,8 +43,11 @@
 
       <div class="listinguser d-flex align-items-center border-bottom p-5">
         <div>
-          <%= image_tag "airbnb_logo.png", class:"avatar" %>
-          <%# <%= cl_image_tag @user.profile_picture.key, class:"avatar" %>
+          <% if @user.profile_picture.attached? %>
+            <%= cl_image_tag @user.profile_picture.key, class:"avatar" %>
+          <% else %>
+            <%= image_tag "user_vector.png", class:"avatar" %>
+          <% end %>
         </div>
         <div>
           <p class="ms-3 p-0 m-0 fw-bold">Hosted by <%= @user.first_name %> </p>
@@ -60,5 +63,8 @@
       <%= render '/bookings/formshort', booking: Booking.new, listing: @listing %>
     </div>
   </div>
+
+  <%= render '/shared/map', marker: @marker %>
+
 </div>
 
