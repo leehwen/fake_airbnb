@@ -22,6 +22,9 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @user = User.find(@listing.user_id)
+    @marker = { lat: @listing.latitude,
+               lng: @listing.longitude,
+               info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})}
   end
 
   private
