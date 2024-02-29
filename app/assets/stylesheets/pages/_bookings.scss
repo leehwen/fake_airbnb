@@ -15,7 +15,16 @@
   justify-content: space-between;
 }
 
-.booking{
-  width: 80%;
-  margin: 0 auto;
+.price-table p {
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.notes {
+  font-size: 0.8rem;
+  color:#AAAAAA
 }
