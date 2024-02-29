@@ -1,14 +1,27 @@
 <div class="container">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-6 img-card rounded-end rounded-4" style="background-image:url('<%= cl_image_path(@listing.images[0].key) %>')"></div>
-    <div class="col-6">
-      <div class="grid text-center" style="column-gap: 8px">
-        <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[1].key) %>')"></div>
-        <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[2].key) %>')"></div>
-        <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[3].key) %>')"></div>
-        <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[4].key) %>')"></div>
+  <% if @listing.images.attached? %>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-6 img-card rounded-end rounded-4" style="background-image:url('<%= cl_image_path(@listing.images[0].key) %>')"></div>
+      <div class="col-6">
+        <div class="grid text-center" style="column-gap: 8px">
+          <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[1].key) %>')"></div>
+          <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[2].key) %>')"></div>
+          <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[3].key) %>')"></div>
+          <div class="g-col-6 img-small" style="background-image:url('<%= cl_image_path(@listing.images[4].key) %>')"></div>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-6 img-card rounded-end rounded-4" style="background-image:asset-url('paris.jpg')"></div>
+        <div class="col-6">
+          <div class="grid text-center" style="column-gap: 8px">
+            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
+            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
+            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
+            <div class="g-col-6 img-small" style="background-image: asset-url('paris.jpg')"></div>
+          </div>
+        </div><%= image_tag "paris.jpg", alt: "Listing Image"%>
+    <% end %>
   </div>
 
   <div class="row">
