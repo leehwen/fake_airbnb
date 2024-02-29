@@ -1,10 +1,12 @@
-<div>
-<% @bookings.each do |booking| %>
-  <div>
-    <p><%= booking.listing.location %></p>
-    <p><%= booking.listing.user.first_name %></p>
-    <p><%= "#{booking.start_date} - #{booking.end_date}"%></p>
-    <%= link_to "See Details", booking_path(booking) %>
+<div class="booking">
+  <div class="p-4 card rounded-4">
+  <% @bookings.each do |booking| %>
+    <div>
+      <p><span class="fw-bold">Location: </span><%= booking.listing.location %></p>
+      <p><span class="fw-bold">Host name: </span><%= booking.listing.user.first_name %></p>
+      <p><span class="fw-bold">Booking dates: </span><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+      <%= link_to "See Details", booking_path(booking) %>
+    </div>
+  <% end %>
   </div>
-<% end %>
 </div>
