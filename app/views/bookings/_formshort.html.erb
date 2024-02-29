@@ -1,7 +1,14 @@
-<%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
-  <%= f.hidden_field :listing_id, :value => @listing.id %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :no_of_guests %>
-  <%= f.submit 'Reserve' %>
-<% end %>
+<div class="card shadow-sm p-3 text-center fw-bold rounded">
+  <%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
+    <%= f.hidden_field :listing_id, :value => @listing.id %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :no_of_guests %>
+    <%= f.submit 'Reserve', class: 'btn btn-success w-100' %>
+  <% end %>
+  <p class="pt-3 fw-normal text-secondary ">You will not be charged yet</p>
+  <div class="d-flex justify-content-between">
+    <p>Price per night</p>
+    <p>$<%= listing.price_per_night %></p>
+  </div>
+</div>
