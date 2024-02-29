@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   def index
-    # @user = User.find(current_user.id)
     @bookings = current_user.bookings
   end
 
@@ -14,13 +13,15 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.listing = @listing # TO DO: need to query the listing and link up
-    @booking.save
+    @booking.user = current_user
+    @booking.save!
+
     redirect_to bookings_path
   end
 
   def passdata
-    @booking = Booking.new
+    # @booking = Booking.new
+    # @listing = Listing.first
     # @listing = Listing.find(params[:listing_id]) # TO DO: need to fetch it from listing show page
   end
 
@@ -33,6 +34,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :no_of_guests, :payment)
+    params.require(:booking).permit(:start_date, :end_date, :no_of_guests, :payment, :listing_id)
   end
 end
