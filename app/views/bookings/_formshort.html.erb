@@ -1,7 +1,40 @@
-<%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
-  <%= f.hidden_field :listing_id, :value => @listing.id %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :no_of_guests %>
-  <%= f.submit 'Reserve' %>
-<% end %>
+<div class="card bg-white p-3">
+  <div>
+    <span class="fs-5"><strong>$<%= @listing.price_per_night %></strong></span>
+    <span class="fs-6"> / night</span>
+  </div>
+  <div>
+    <%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
+      <%= f.hidden_field :listing_id, :value => @listing.id %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :no_of_guests %>
+      <%= f.submit 'Reserve', class: "cta-button w-100" %>
+    <% end %>
+  </div>
+  <div>
+    <p class="text-center notes"><em>You won't be charged yet.</em></p>
+  </div>
+  <div>
+    <ul class="price-table p-0 m-0">
+      <li>
+        <p>$<%= @listing.price_per_night %> x <%= "duration (via JS)" %> nights</p>
+        <p><%= "$XXXX" %></p>
+      </li>
+      <li>
+        <p>Cleaning fee</p>
+        <p>$50</p>
+      </li>
+      <li>
+        <p>Service fee</p>
+        <p>$10</p>
+      </li>
+      <hr class="my-0">
+      <li>
+        <p><strong>Total before taxes</strong></p>
+        <p><strong>$computed</strong></p>
+      </li>
+    </ul>
+  </div>
+
+</div>
