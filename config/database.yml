@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: fake_airbnb_production
-  username: fake_airbnb
-  password: <%= ENV["FAKE_AIRBNB_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
