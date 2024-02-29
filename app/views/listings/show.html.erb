@@ -24,43 +24,47 @@
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="row pt-5">
     <div class="col-8 p-3">
-      <div class="listingdes border-bottom p-5">
-        <h3 class="fw-bold mb-2"><%= @listing.subtitle.titleize %> , <%= @listing.location.titleize%></h3>
-        <h5 class="fw-bold"><%= @listing.no_of_guests %>
-         <% if @listing.no_of_guests > 1%>
-         guests
-         <% else %>
-         guest
-         <% end %> . <%= @listing.no_of_rooms %>
-        <% if @listing.no_of_rooms > 1%>
-         rooms
-         <% else %>
-         room
-         <% end %></h5>
-      </div>
-
-      <div class="listinguser d-flex align-items-center border-bottom p-5">
-        <div>
-          <% if @user.profile_picture.attached? %>
-            <%= cl_image_tag @user.profile_picture.key, class:"avatar" %>
+      <div class="overflow-y-auto d-flex flex-column justify-content-around">
+        <div class="listingdes border-bottom pb-3 ">
+          <h3 class="fw-bold mb-2"><%= @listing.subtitle.titleize %> , <%= @listing.location.titleize%></h3>
+          <h5 class="fw-bold"><%= @listing.no_of_guests %>
+          <% if @listing.no_of_guests > 1%>
+          guests
           <% else %>
-            <%= image_tag "user_vector.png", class:"avatar" %>
-          <% end %>
+          guest
+          <% end %> . <%= @listing.no_of_rooms %>
+          <% if @listing.no_of_rooms > 1%>
+          rooms
+          <% else %>
+          room
+          <% end %></h5>
         </div>
-        <div>
-          <p class="ms-3 p-0 m-0 fw-bold">Hosted by <%= @user.first_name %> </p>
-        </div>
-      </div>
 
-      <div class="listingfulldes p-5">
-        <p><%= @listing.description%></p>
+        <div class="listinguser d-flex align-items-center border-bottom py-3">
+          <div>
+            <% if @user.profile_picture.attached? %>
+              <%= cl_image_tag @user.profile_picture.key, class:"avatar" %>
+            <% else %>
+              <%= image_tag "user_vector.png", class:"avatar" %>
+            <% end %>
+          </div>
+          <div>
+            <h3 class="ms-3 p-0 m-0 fw-bold">Hosted by <%= @user.first_name %> </h3>
+          </div>
+        </div>
+
+        <div class="listingfulldes pt-3">
+          <h5 class="fs-6"><%= @listing.description%></h5>
+        </div>
       </div>
     </div>
 
-    <div class="col-4">
-      <%= render '/bookings/formshort', booking: Booking.new, listing: @listing %>
+    <div class="col-4 p-3">
+      <div class="position-sticky">
+        <%= render '/bookings/formshort', booking: Booking.new, listing: @listing %>
+      </div>
     </div>
   </div>
 
