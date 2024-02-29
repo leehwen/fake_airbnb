@@ -1,0 +1,9 @@
+<div class="border mb-3">
+  <% @bookings.each do |booking| %>
+    <p>Start date: <%= booking.start_date %></p>
+    <p>End date: <%= booking.end_date %></p>
+    <p>No. of guests: <%= booking.no_of_guests %></p>
+    <p>Approval status: <%= booking.host_approved %></p>
+    <p>Guest name: <%= booking.user.first_name %></p>
+  <% end %>
+</div>
