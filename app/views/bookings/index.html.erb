@@ -1,12 +1,50 @@
-<div class="booking">
-  <div class="p-4 card rounded-4">
-  <% @bookings.each do |booking| %>
-    <div>
-      <p><span class="fw-bold">Location: </span><%= booking.listing.location %></p>
-      <p><span class="fw-bold">Host name: </span><%= booking.listing.user.first_name %></p>
-      <p><span class="fw-bold">Booking dates: </span><%= "#{booking.start_date} - #{booking.end_date}"%></p>
-      <%= link_to "See Details", booking_path(booking) %>
-    </div>
-  <% end %>
+<div class="container">
+  <h1>Bookings</h1>
+  <div>
+    <% if @bookings.count == 0 %>
+      <p>You don't have any upcoming trips.</p>
+      <button class="cta-button">Go somewhere!</button>
+    <% else %>
+      <h2>Upcoming reservations</h2>
+      <% upcoming = @bookings.select { |booking| (booking.start_date >= Date.today) && booking.host_approved != false } %>
+      <% upcoming.each do |booking| %>
+        <div class="card bg-white p-2 m-2">
+          <p><span class="fw-bold">Location: </span><%= booking.listing.location %></p>
+          <p><span class="fw-bold">Host name: </span><%= booking.listing.user.first_name %></p>
+          <p><span class="fw-bold">Booking dates: </span><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+          <p><span class="fw-bold">Approval status: </span><%= booking.host_approved %></p>
+          <%= link_to "See Details", booking_path(booking) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <h2>Past reservations</h2>
+    <% past = @bookings.select { |booking| (booking.end_date < Date.today) } %>
+    <%# Check : Why must be "<" coz "<=" got syntax issue %>
+    <% past.each do |booking| %>
+      <div class="card bg-white p-2 m-2">
+        <p><span class="fw-bold">Location: </span><%= booking.listing.location %></p>
+        <p><span class="fw-bold">Host name: </span><%= booking.listing.user.first_name %></p>
+        <p><span class="fw-bold">Booking dates: </span><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+        <p><span class="fw-bold">Approval status: </span><%= booking.host_approved %></p>
+        <%= link_to "See Details", booking_path(booking) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <h2>Rejected reservations</h2>
+    <% rejected = @bookings.select { |booking| booking.host_approved == false } %>
+    <% rejected.each do |booking| %>
+      <div class="card bg-white p-2 m-2">
+        <p><span class="fw-bold">Location: </span><%= booking.listing.location %></p>
+        <p><span class="fw-bold">Host name: </span><%= booking.listing.user.first_name %></p>
+        <p><span class="fw-bold">Booking dates: </span><%= "#{booking.start_date} - #{booking.end_date}"%></p>
+        <p><span class="fw-bold">Approval status: </span><%= booking.host_approved %></p>
+        <%= link_to "See Details", booking_path(booking) %>
+      </div>
+    <% end %>
   </div>
 </div>
