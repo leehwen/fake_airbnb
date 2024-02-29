@@ -10,7 +10,7 @@
     <%= f.input :price_per_night, input_html: { min:"1" } %>
     <%= f.input :no_of_guests, input_html: { min:"1" } %>
     <%= f.input :description %>
-    <%# <%= f.association :user, input_html: { value: current_user.id }, as: :hidden %> %>
+    <%# <%= f.association :user, input_html: { value: current_user.id }, as: :hidden %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class:"btn btn-outline-success" %>
   <% end %>

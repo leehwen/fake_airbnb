@@ -9,5 +9,5 @@ class Listing < ApplicationRecord
   
   validates :category, :no_of_rooms, :location, :price_per_night, :no_of_guests, :description, :title, :subtitle, presence: true
   validates :no_of_guests, :no_of_rooms, :price_per_night, numericality: { greater_than: 0 }
-  validates :images, limit: { min: 5, max: 5, message: "selected must be 5"}
+  # validates :images, limit: { min: 5, max: 5, message: "selected must be 5"}
 end

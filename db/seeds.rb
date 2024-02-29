@@ -50,7 +50,7 @@ listing = Listing.create(
   no_of_rooms: 1,
   location: "raffles place",
   price_per_night: 200,
-  category: "condo",
+  category: "Condo",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 1
 )
@@ -62,7 +62,7 @@ listing1 = Listing.create(
   no_of_rooms: 3,
   location: "18 Raffles Quay, Singapore 048582",
   price_per_night: 800,
-  category: "condo",
+  category: "Condo",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 3
 )
@@ -86,7 +86,7 @@ listing3 = Listing.create(
   no_of_rooms: 4,
   location: "woodlands",
   price_per_night: 500,
-  category: "landed",
+  category: "Condo",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 4
 )
@@ -98,7 +98,7 @@ listing4 = Listing.create(
   no_of_rooms: 7,
   location: "changi",
   price_per_night: 100,
-  category: "landed",
+  category: "Condo",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 7
 )
@@ -110,7 +110,7 @@ listing5 = Listing.create(
   no_of_rooms: 3,
   location: "sentosa",
   price_per_night: 800,
-  category: "condo",
+  category: "Condo",
   description: "Posh location at Sentosa cove.",
   no_of_guests: 3
 )
@@ -122,7 +122,7 @@ listing6 = Listing.create(
   no_of_rooms: 2,
   location: "orchard",
   price_per_night: 650,
-  category: "condo",
+  category: "Condo",
   description: "Nice condo near Orchard road shopping belt",
   no_of_guests: 2
 )

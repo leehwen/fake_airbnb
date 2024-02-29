@@ -53,7 +53,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "geocoder"
-
+gem 'active_storage_validations'
 gem "devise"
 
 group :development, :test do
@@ -80,4 +80,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-  gem 'active_storage_validations'
