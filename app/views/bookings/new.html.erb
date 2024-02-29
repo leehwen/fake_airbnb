@@ -1,2 +1,63 @@
-<h1>Make a booking</h1>
-<%= render "formlong", booking: @booking %>
+<div class="container-fluid bg-white px-5 pb-4">
+  <div class="d-flex justify-content-start align-items-center mb-4">
+    <%= link_to listing_path(@booking.listing) do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+    <h1 class="mb-0 ms-3">Confirm and pay</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <div>
+        <%= render "formlong", booking: @booking %>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="card bg-white p-3">
+        <div class="listing-card d-flex">
+          <div class="border">Image</div>
+          <div class="listing-card-info ms-3">
+            <p class="text-secondary"><em><%= "#{@booking.listing.no_of_rooms} rooms for #{@booking.listing.no_of_guests} guests"%></em></p>
+            <p><strong><%= @booking.listing.title %></strong></p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div>
+          <p><strong>Price details - Need JavaSript</strong></p>
+          <ul class="price-table p-0 m-0">
+            <li>
+              <% duration = (@booking.end_date - @booking.start_date).to_i %>
+              <% price_per_night = @booking.listing.price_per_night %>
+              <p>$<%= price_per_night %> x <%= duration %> nights</p>
+              <p><%= "$#{duration*price_per_night}" %></p>
+            </li>
+            <li>
+              <p>Cleaning fee</p>
+              <p>$50</p>
+            </li>
+            <li>
+              <p>Service fee</p>
+              <p>$10</p>
+            </li>
+            <li>
+              <p>Occupancy taxes and fees</p>
+              <p>$5</p>
+            </li>
+            <li>
+              <p>Credits</p>
+              <p>$0</p>
+            </li>
+            <li>
+              <p><strong><%= "Total(USD)" %></strong></p>
+              <p><strong><%= "$#{duration*price_per_night + 65}" %></strong></p>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
