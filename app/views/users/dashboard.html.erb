@@ -5,5 +5,9 @@
     <p>No. of guests: <%= booking.no_of_guests %></p>
     <p>Approval status: <%= booking.host_approved %></p>
     <p>Guest name: <%= booking.user.first_name %></p>
+    <%= link_to "Accept", approve_booking_path(booking), data: {turbo_method: :patch} %>
+    <%= link_to "Reject", reject_booking_path(booking), data: {turbo_method: :patch} %>
   <% end %>
 </div>
+
+<%# TO DO: list refreshes and the order changes %>

@@ -31,6 +31,18 @@ class BookingsController < ApplicationController
     redirect_to bookings_path, status: :see_other
   end
 
+  def approve
+    @booking = Booking.find(params[:id])
+    @booking.update!(host_approved: true)
+    redirect_to dashboard_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.update!(host_approved: false)
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params
