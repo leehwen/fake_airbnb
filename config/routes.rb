@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     collection do
       get 'passdata'
     end
+    member do
+      patch 'approve'
+      patch 'reject'
+    end
   end
 
   get "/dashboard", to: "users#dashboard"
