@@ -11,7 +11,12 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(params_listing)
-    @listing.save
+    @listing.user = current_user
+    if @listing.save
+      redirect_to listings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -22,6 +27,7 @@ class ListingsController < ApplicationController
   private
 
   def params_listing
-    params.require(:listing).permit(:category, :no_of_rooms, :location, :price_per_night, :no_of_guests, :description, :user_id, images: [])
+    params.require(:listing).permit(:title, :subtitle, :category, :no_of_rooms, :location,
+      :price_per_night, :no_of_guests, :description, :user_id, images: [])
   end
 end
