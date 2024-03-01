@@ -51,7 +51,7 @@
       </div>
       <p class="listing-location"><%= listing.location.titleize %></p>
       <p>
-        <%= listing.no_of_rooms %> room
+        <%= pluralize(listing.no_of_rooms, 'room') %>
           <br>
         $<%= listing.price_per_night %> SGD per night
       </p>

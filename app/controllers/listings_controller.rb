@@ -38,6 +38,26 @@ class ListingsController < ApplicationController
                info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})}]
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update
+    redirect_to listing_path(@listing)
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    if @listing.bookings.present?
+      redirect_to dashboard_path, :alert => "This listing can't be deleted as it has pending bookings for approval."
+    else
+      @listing.destroy
+      redirect_to dashboard_path
+    end
+  end
+
   private
 
   def params_listing
