@@ -1,13 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-light border-bottom mb-5 py-4 px-5">
+<nav class="navbar navbar-expand-lg bg-light border-bottom mb-5 py-3 px-5">
   <div class="container-fluid">
-    <a class="logo" href=<%= root_path %>><%= image_tag "airbnb_logo.png", alt: "Airbnb", width: 100 %></a>
+    <a class="logo my-3" href=<%= root_path %>><%= image_tag "airbnb_logo.png", alt: "Airbnb", width: 100 %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <div class="">
+          <%= form_with url: listings_path, method: :get, url: results_listings_path, class: "d-flex" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Type a keyword"
+              %>
+            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <% end %>
+      </div>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown d-flex align-items-center">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               As a Host
             </a>
@@ -17,7 +28,7 @@
               <li><a class="dropdown-item" href=<%= new_listing_path %>>New Listing</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown d-flex align-items-center">
+          <li class="nav-item dropdown me-3">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               As a Guest
             </a>
@@ -25,7 +36,7 @@
               <li><a class="dropdown-item" href=<%= bookings_path %>>My Bookings</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown ps-4">
+          <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if current_user.profile_picture.attached? %>
                 <%= cl_image_tag current_user.profile_picture.key, class: "avatar", alt: "dropdown menu"%>
@@ -33,12 +44,12 @@
                 <%= image_tag "user_vector.png", class: "avatar", alt: "dropdown menu"%>
               <% end %>
            </a>
-            <div class="dropdown-menu dropdown-menu-end ps-4" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item dropdown ps-4">
+          <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "user_vector.png", class: "avatar", alt: "dropdown menu" %>
             </a>

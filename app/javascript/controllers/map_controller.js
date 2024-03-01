@@ -6,7 +6,7 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    marker: Object
+    marker: Array
   }
 
   connect() {
@@ -19,25 +19,25 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v12"
     })
 
-    this.#addMarkerToMap();
-    this.#fitMapToMarker();
+    this.#addMarkersToMap();
+    this.#fitMapToMarkers();
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
-
   }
 
-  #addMarkerToMap() {
-    const popup = new mapboxgl.Popup().setHTML(this.markerValue.info_window_html);
-    new mapboxgl.Marker()
-    .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
-    .setPopup(popup)
-    .addTo(this.map)
+  #addMarkersToMap() {
+    this.markerValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+      new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(this.map)
+    });
   }
 
-  #fitMapToMarker() {
+  #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
+    this.markerValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
-
 }
