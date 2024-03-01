@@ -9,14 +9,28 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.payment = "master"
+    if !@booking.valid?
+      @listing = Listing.find(booking_params[:listing_id])
+      @user = User.find(@listing.user_id)
+      @markers = [{ lat: @listing.latitude,
+                 lng: @listing.longitude,
+                 info_window_html: render_to_string(partial: "listings/info_window", locals: {listing: @listing})}]
+
+      render "listings/show", status: :unprocessable_entity
+    end
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.save!
+    if @booking.save
+      redirect_to bookings_path
+    else
 
-    redirect_to bookings_path
+      render "new", status: :unprocessable_entity
+    end
   end
 
   def passdata

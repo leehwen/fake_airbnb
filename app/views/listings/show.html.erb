@@ -63,7 +63,7 @@
 
     <div class="col-4 p-3">
       <div class="position-sticky">
-        <%= render '/bookings/formshort', booking: Booking.new, listing: @listing %>
+        <%= render '/bookings/formshort', booking: @booking || Booking.new, listing: @listing %>
       </div>
     </div>
   </div>

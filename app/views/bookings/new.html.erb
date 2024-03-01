@@ -1,5 +1,5 @@
-<div class="container-fluid bg-white px-5 pb-4" 
-  data-controller="price-calculator" 
+<div class="container-fluid bg-white px-5 pb-4"
+  data-controller="price-calculator"
   data-price-calculator-price-value = "<%= @booking.listing.price_per_night %>"
   data-price-calculator-fees-value = <%= @booking.listing.total_fees%>
 >
@@ -21,9 +21,9 @@
       <div class="card bg-white p-3">
         <div class="listing-card d-flex">
         <% if @booking.listing.images.attached? %>
-          <div class="border small-card" style="background-image:url('<%= cl_image_path(@booking.listing.images[0].key) %>')"></div>
+          <div class="border small-card flex-shrink-0" style="background-image:url('<%= cl_image_path(@booking.listing.images[0].key) %>')"></div>
         <% else %>
-          <div class="border small-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
+          <div class="border small-card flex-shrink-0" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
         <% end %>
           <div class="listing-card-info ms-3">
             <p class="text-secondary"><em><%= "#{@booking.listing.no_of_rooms} rooms for #{@booking.listing.no_of_guests} guests"%></em></p>
