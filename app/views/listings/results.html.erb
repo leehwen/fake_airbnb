@@ -1,12 +1,8 @@
 <div class="container-fluid">
-  <div class="border">
-    <p>Filters</p>
-  </div>
-
   <div class="row">
     <div class="col-7">
       <div>
-        <p><%= pluralize(@listings.length , "place") %></p>
+        <p><strong><%= pluralize(@listings.length , "place") %> within 10km of searched area</strong></p>
       </div>
 
       <div class="results-grid">
@@ -72,9 +68,10 @@
       </div>
     </div>
 
-    <div class="col-5">
+    <div class="col-5 sticky-map">
       <%= render '/shared/map', marker: @markers %>
     </div>
+
   </div>
 
 </div>
