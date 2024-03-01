@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="price-calculator"
 export default class extends Controller {
-  static targets = ["startDate", "endDate", "day", "total", "totalWithFees"]
+  static targets = ["startDate", "endDate", "day", "total", "totalWithFees", "totalFeesWithoutTax"]
   static values = {
     price: Number,
     fees: Number
@@ -23,6 +23,7 @@ export default class extends Controller {
         target.innerText = (Date.parse(this.endDateTarget.value) - Date.parse(this.startDateTarget.value)) / 3600000 / 24 * this.priceValue
       })
       this.totalWithFeesTarget.innerText = (Date.parse(this.endDateTarget.value) - Date.parse(this.startDateTarget.value)) / 3600000 / 24 * this.priceValue + this.feesValue
+      this.totalFeesWithoutTaxTarget.innerText = (Date.parse(this.endDateTarget.value) - Date.parse(this.startDateTarget.value)) / 3600000 / 24 * this.priceValue + this.feesValue
     }
   }
 }

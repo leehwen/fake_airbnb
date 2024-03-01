@@ -26,4 +26,8 @@ class Listing < ApplicationRecord
   def total_fees
     cleaning_fee + service_fee + tax_and_others
   end
+
+  def total_fees_notax
+    cleaning_fee + service_fee
+  end
 end
