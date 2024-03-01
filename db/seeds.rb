@@ -127,20 +127,22 @@ listing6 = Listing.create(
   no_of_guests: 2
 )
 
-Booking.create(
+Booking.create!(
   start_date: Date.today + 10.days,
   end_date: Date.today + 15.days,
   listing: listing1,
   user: guest0,
   no_of_guests: 2,
+  payment: "Visa"
 )
 
-Booking.create(
+Booking.create!(
   start_date: Date.today + 3.days,
   end_date: Date.today + 7.days,
   listing: listing2,
   user: guest0,
-  no_of_guests: 1
+  no_of_guests: 1,
+  payment: "Visa"
 )
 
 Booking.create(
@@ -149,6 +151,7 @@ Booking.create(
   listing: listing3,
   user: guest0,
   no_of_guests: 3,
+  payment: "Visa"
 )
 
 Booking.create(
@@ -156,7 +159,8 @@ Booking.create(
   end_date: Date.today + 7.days,
   listing: listing1,
   user: guest1,
-  no_of_guests: 1
+  no_of_guests: 1,
+  payment: "Visa"
 )
 
 Booking.create(
@@ -165,6 +169,7 @@ Booking.create(
   listing: listing2,
   user: guest1,
   no_of_guests: 2,
+  payment: "Visa"
 )
 
 Booking.create(
@@ -172,7 +177,8 @@ Booking.create(
   end_date: Date.today + 14.days,
   listing: listing3,
   user: guest1,
-  no_of_guests: 4
+  no_of_guests: 4,
+  payment: "Visa"
 )
 
 puts "completed"
