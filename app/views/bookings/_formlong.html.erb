@@ -1,10 +1,10 @@
 <% paymentmode = %w[Visa Mastercard] %>
-<%= simple_form_for(booking) do |f| %>
+<%= simple_form_for(booking, data: {controller: "date-range-picker"}) do |f|%>
   <%= f.hidden_field :listing_id, :value => params[:booking][:listing_id] %>
 
   <h2 class="fs-4"><strong>Your trip</strong></h2>
-  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :start_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "startDate" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "endDate" } } %>
   <%= f.input :no_of_guests, collection: 1..10 %>
 
   <h2 class="fs-4"><strong>Choose how to pay</strong></h2>
