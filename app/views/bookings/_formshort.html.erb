@@ -1,13 +1,13 @@
-<div class="card bg-white p-3">
+<div class="card bg-white p-3" data-controller="price-calculator" data-price-calculator-price-value = "<%= listing.price_per_night %>" >
   <div>
-    <span class="fs-5"><strong>$<%= @listing.price_per_night %></strong></span>
+    <span class="fs-5"><strong>$<%= listing.price_per_night %></strong></span>
     <span class="fs-6"> / night</span>
   </div>
   <div data-controller="date-range-picker">
     <%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
-      <%= f.hidden_field :listing_id, :value => @listing.id %>
-      <%= f.input :start_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "startDate" } } %>
-      <%= f.input :end_date, as: :string, input_html: {  data: { action: "date-range-picker#update", "date-range-picker-target" => "endDate" }} %>
+      <%= f.hidden_field :listing_id, :value => listing.id %>
+      <%= f.input :start_date, as: :string, input_html: { data: { action:"input->price-calculator#calc date-range-picker#update", "price-calculator-target"=> "startDate", "date-range-picker-target" => "startDate" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { action:"input->price-calculator#calc date-range-picker#update", "price-calculator-target"=> "endDate", "date-range-picker-target" => "endDate" } } %>
       <%= f.input :no_of_guests, collection: 1..10, selected: 1 %>
       <%= f.submit 'Reserve', class: "cta-button w-100" %>
     <% end %>
@@ -18,8 +18,8 @@
   <div>
     <ul class="price-table p-0 m-0">
       <li>
-        <p>$<%= @listing.price_per_night %> x <%= "duration (via JS)" %> nights</p>
-        <p><%= "$XXXX" %></p>
+        <p>$ <%= listing.price_per_night %> x <span data-price-calculator-target="day"> 0 </span> nights</p>
+        <p>$ <span data-price-calculator-target="total"> 0 </span></p>
       </li>
       <li>
         <p>Cleaning fee</p>
@@ -38,3 +38,5 @@
   </div>
 
 </div>
+
+input
