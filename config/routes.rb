@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :listings
+  resources :listings do
+    collection do
+      get 'results'
+    end
+  end
   resources :bookings, only: %i[index show new create destroy] do
     collection do
       get 'passdata'

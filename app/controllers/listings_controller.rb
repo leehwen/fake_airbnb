@@ -5,6 +5,17 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+  def results
+    @listings = Listing.near(params[:query], 10)
+    @markers = @listings.geocoded.map do | listing |
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+      }
+    end
+  end
+
   def new
     @listing = Listing.new
   end
@@ -22,9 +33,9 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @user = User.find(@listing.user_id)
-    @marker = { lat: @listing.latitude,
+    @markers = [{ lat: @listing.latitude,
                lng: @listing.longitude,
-               info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})}
+               info_window_html: render_to_string(partial: "info_window", locals: {listing: @listing})}]
   end
 
   private
