@@ -1,28 +1,45 @@
-<div class="border mb-3">
-  <% @bookings.each do |booking| %>
-    <p>Start date: <%= booking.start_date %></p>
-    <p>End date: <%= booking.end_date %></p>
-    <p>No. of guests: <%= booking.no_of_guests %></p>
-    <p>Approval status: <%= booking.host_approved %></p>
-    <p>Guest name: <%= booking.user.first_name %></p>
-    <%= link_to "Accept", approve_booking_path(booking), data: {turbo_method: :patch} %>
-    <%= link_to "Reject", reject_booking_path(booking), data: {turbo_method: :patch} %>
-  <% end %>
-</div>
+<div class="dash">
+  <div class="mb-3 dash-book">
+    <h1>Bookings Pending Confirmation (<%= @pending_bookings.count %>)</h1>
+      <%= render "dashboarduser", bookings: @pending_bookings%>
+  </div>
 
-<div class="border mb-3">
-  <% @listings.each do |listing| %>
-    <p><%= listing.location %></p>
-    <p><%= listing.title %></p>
-    <p><%= pluralize(listing.no_of_rooms, 'room') %></p>
-    <p>$<%= listing.price_per_night %> SGD per night</p>
-    <%= link_to "View Details", listing_path(listing)%>
-    <%= link_to "Edit", edit_listing_path(listing)%>
-    <%= link_to "Delete",
-        listing_path(listing),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  <% end %>
-</div>
+    <div class="mb-3 dash-book">
+    <h1>Bookings Confirmed (<%= @confirmed_bookings.count %>)</h1>
+      <%= render "dashboarduser", bookings: @confirmed_bookings%>
+  </div>
+
+  <div class="mb-3 dash-list">
+    <h1>My Listings (<%= @listings.count %>)</h1>
+    <% @listings.each do |listing| %>
+    <div class="card m-4 p-4">
+      <div class="d-flex align-items-center">
+        <div class="me-3">
+          <% if listing.images.attached? %>
+            <div class="border list-card" style="background-image:url('<%= cl_image_path(listing.images[0].key) %>')"></div>
+          <% else %>
+            <div class="border list-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
+          <% end %>
+        </div>
+
+        <div>
+          <p><span class="fw-bold">Location: </span><%= listing.location %></p>
+          <p><span class="fw-bold">Title: </span><%= listing.title %></p>
+          <p><span class="fw-bold">Number of rooms: </span><%= pluralize(listing.no_of_rooms, 'room') %></p>
+          <p><span class="fw-bold">Price Per Night: </span>$<%= listing.price_per_night %> SGD per night</p>
+          <div>
+            <%= link_to "View Details", listing_path(listing), class:"btn btn-info rounded-3"%>
+            <%= link_to "Edit", edit_listing_path(listing), class:"btn btn-warning rounded-3"%>
+            <%= link_to "Delete",
+                listing_path(listing), class:"btn btn-danger rounded-3 text-light",
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div> 
+</div>     
 
 <%# TO DO: list refreshes and the order changes %>

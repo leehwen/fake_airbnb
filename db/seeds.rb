@@ -133,7 +133,6 @@ Booking.create(
   listing: listing1,
   user: guest0,
   no_of_guests: 2,
-  host_approved: true
 )
 
 Booking.create(
@@ -150,7 +149,6 @@ Booking.create(
   listing: listing3,
   user: guest0,
   no_of_guests: 3,
-  host_approved: false
 )
 
 Booking.create(
@@ -167,7 +165,6 @@ Booking.create(
   listing: listing2,
   user: guest1,
   no_of_guests: 2,
-  host_approved: true
 )
 
 Booking.create(

@@ -1,0 +1,29 @@
+  <% bookings.each do |booking| %>
+<div class="card m-4 p-4">
+  <div class="d-flex align-items-center">
+    <div class="me-3">
+      <% if booking.listing.images.attached? %>
+        <div class="border list-card" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
+      <% else %>
+        <div class="border list-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
+      <% end %>
+    </div>
+
+    <div>
+      <p><span class="fw-bold">Start date: </span><%= booking.start_date %></p>
+      <p><span class="fw-bold">End date: </span><%= booking.end_date %></p>
+      <p><span class="fw-bold">No of Guests: </span><%= booking.no_of_guests %></p>
+      <p><span class="fw-bold">Approval status: </span><%= booking.host_approved %></p>
+      <p><span class="fw-bold">Guest Name: </span><%= booking.user.first_name %></p>
+      <div>
+        <% if booking.host_approved == nil %>
+          <%= link_to "Accept", approve_booking_path(booking), class:"btn btn-success", data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
+          <%= link_to "Reject", reject_booking_path(booking), class:"btn btn-danger rounded-3 text-light", data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
+        <% elsif booking.host_approved == true %>
+          <%= link_to "Confirmed", approve_booking_path(booking), class:"btn btn-success disabled", data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  <% end %>
