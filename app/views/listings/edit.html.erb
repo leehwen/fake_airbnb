@@ -1,0 +1,17 @@
+<div class="container w-50">
+  <%= simple_form_for(@listing) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :subtitle %>
+    <%= f.input :category, collection: Listing::CATEGORY %>
+    <%= f.input :no_of_rooms, input_html: { min:"1" } %>
+    <%= f.input :location,
+    input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
+    wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    <%= f.input :price_per_night, input_html: { min:"1" } %>
+    <%= f.input :no_of_guests, input_html: { min:"1" } %>
+    <%= f.input :description %>
+    <%# <%= f.association :user, input_html: { value: current_user.id }, as: :hidden %>
+    <%= f.input :images, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class:"btn btn-outline-success" %>
+  <% end %>
+</div>

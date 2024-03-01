@@ -10,4 +10,19 @@
   <% end %>
 </div>
 
+<div class="border mb-3">
+  <% @listings.each do |listing| %>
+    <p><%= listing.location %></p>
+    <p><%= listing.title %></p>
+    <p><%= pluralize(listing.no_of_rooms, 'room') %></p>
+    <p>$<%= listing.price_per_night %> SGD per night</p>
+    <%= link_to "View Details", listing_path(listing)%>
+    <%= link_to "Edit", edit_listing_path(listing)%>
+    <%= link_to "Delete",
+        listing_path(listing),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  <% end %>
+</div>
+
 <%# TO DO: list refreshes and the order changes %>
