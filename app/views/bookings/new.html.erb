@@ -1,4 +1,8 @@
-<div class="container-fluid bg-white px-5 pb-4">
+<div class="container-fluid bg-white px-5 pb-4" 
+  data-controller="price-calculator" 
+  data-price-calculator-price-value = "<%= @booking.listing.price_per_night %>"
+  data-price-calculator-fees-value = <%= @booking.listing.total_fees%>
+>
   <div class="d-flex justify-content-start align-items-center mb-4">
     <%= link_to listing_path(@booking.listing) do %>
       <i class="fa-solid fa-chevron-left"></i>
@@ -30,25 +34,25 @@
         <hr>
 
         <div>
-          <p><strong>Price details - Need JavaSript</strong></p>
+          <p><strong>Price details</strong></p>
           <ul class="price-table p-0 m-0">
             <li>
               <% duration = (@booking.end_date - @booking.start_date).to_i %>
               <% price_per_night = @booking.listing.price_per_night %>
-              <p>$<%= price_per_night %> x <%= duration %> nights</p>
-              <p><%= "$#{duration*price_per_night}" %></p>
+              <p>$<%= price_per_night %> x <span data-price-calculator-target="day"><%= duration%></span> nights</p>
+              <p>$<span data-price-calculator-target="total"><%= "#{duration*price_per_night}"%></span></p>
             </li>
             <li>
               <p>Cleaning fee</p>
-              <p>$50</p>
+              <p>$<%= @booking.listing.cleaning_fee%></p>
             </li>
             <li>
               <p>Service fee</p>
-              <p>$10</p>
+              <p>$<%= @booking.listing.service_fee%></p>
             </li>
             <li>
               <p>Occupancy taxes and fees</p>
-              <p>$5</p>
+              <p>$<%= @booking.listing.tax_and_others%></p>
             </li>
             <li>
               <p>Credits</p>
@@ -56,7 +60,7 @@
             </li>
             <li>
               <p><strong><%= "Total(USD)" %></strong></p>
-              <p><strong><%= "$#{duration*price_per_night + 65}" %></strong></p>
+              <p>$<strong><span data-price-calculator-target="totalWithFees"><%= duration*price_per_night + @booking.listing.total_fees %></span></strong></p>
             </li>
           </ul>
 

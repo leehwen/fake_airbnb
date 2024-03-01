@@ -21,7 +21,7 @@
 
   <div>
     <h2>Past reservations</h2>
-    <% past = @bookings.select { |booking| (booking.end_date < Date.today) } %>
+    <% past = @bookings.select { |booking| (booking.end_date < Date.today) && booking.host_approved != false} %>
     <%# Check : Why must be "<" coz "<=" got syntax issue %>
     <% past.each do |booking| %>
       <div class="card bg-white p-2 m-2">

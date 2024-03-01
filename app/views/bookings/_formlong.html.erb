@@ -3,8 +3,8 @@
   <%= f.hidden_field :listing_id, :value => params[:booking][:listing_id] %>
 
   <h2 class="fs-4"><strong>Your trip</strong></h2>
-  <%= f.input :start_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "startDate" } } %>
-  <%= f.input :end_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "endDate" } } %>
+  <%= f.input :start_date, as: :string, input_html: { data: { action:"input->price-calculator#calc date-range-picker#update", "price-calculator-target"=> "startDate", "date-range-picker-target" => "startDate" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { action:"input->price-calculator#calc date-range-picker#update", "price-calculator-target"=> "endDate", "date-range-picker-target" => "endDate" } } %>
   <%= f.input :no_of_guests, collection: 1..10 %>
 
   <h2 class="fs-4"><strong>Choose how to pay</strong></h2>
