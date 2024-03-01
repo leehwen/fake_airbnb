@@ -16,7 +16,11 @@
     <div class="col-5">
       <div class="card bg-white p-3">
         <div class="listing-card d-flex">
-          <div class="border">Image</div>
+        <% if @booking.listing.images.attached? %>
+          <div class="border small-card" style="background-image:url('<%= cl_image_path(@booking.listing.images[0].key) %>')"></div>
+        <% else %>
+          <div class="border small-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
+        <% end %>
           <div class="listing-card-info ms-3">
             <p class="text-secondary"><em><%= "#{@booking.listing.no_of_rooms} rooms for #{@booking.listing.no_of_guests} guests"%></em></p>
             <p><strong><%= @booking.listing.title %></strong></p>

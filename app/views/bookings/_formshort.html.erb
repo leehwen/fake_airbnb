@@ -3,11 +3,11 @@
     <span class="fs-5"><strong>$<%= @listing.price_per_night %></strong></span>
     <span class="fs-6"> / night</span>
   </div>
-  <div>
+  <div data-controller="date-range-picker">
     <%= simple_form_for(booking, method: :get, url: new_booking_path) do |f| %>
       <%= f.hidden_field :listing_id, :value => @listing.id %>
-      <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :start_date, as: :string, input_html: { data: { action: "date-range-picker#update", "date-range-picker-target" => "startDate" } } %>
+      <%= f.input :end_date, as: :string, input_html: {  data: { action: "date-range-picker#update", "date-range-picker-target" => "endDate" }} %>
       <%= f.input :no_of_guests, collection: 1..10, selected: 1 %>
       <%= f.submit 'Reserve', class: "cta-button w-100" %>
     <% end %>
