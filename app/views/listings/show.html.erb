@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <% if @listing.images.attached? %>
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-6 img-card rounded-end rounded-4" style="background-image:url('<%= cl_image_path(@listing.images[0].key) %>')"></div>
