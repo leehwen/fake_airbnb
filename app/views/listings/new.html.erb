@@ -1,4 +1,12 @@
 <div class="container w-50">
+
+  <div class="d-flex justify-content-start align-items-center mb-4">
+    <%= link_to dashboard_path do %>
+      <i class="fa-solid fa-chevron-left"></i>
+    <% end %>
+    <h1 class="mb-0 ms-3">Create New Listing</h1>
+  </div>
+
   <%= simple_form_for(@listing) do |f| %>
     <%= f.input :title %>
     <%= f.input :subtitle %>
@@ -14,4 +22,5 @@
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class:"btn btn-outline-success" %>
   <% end %>
+
 </div>
