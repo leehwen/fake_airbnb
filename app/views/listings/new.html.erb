@@ -20,7 +20,7 @@
     <%= f.input :description %>
     <%# <%= f.association :user, input_html: { value: current_user.id }, as: :hidden %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, class:"btn btn-outline-success" %>
+    <%= f.submit "Create Listing", class: "cta-button mt-3"%>
   <% end %>
 
 </div>

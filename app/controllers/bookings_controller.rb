@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.payment = "master"
+    @booking.payment = "Visa"
     if !@booking.valid?
       @listing = Listing.find(booking_params[:listing_id])
       @user = User.find(@listing.user_id)
