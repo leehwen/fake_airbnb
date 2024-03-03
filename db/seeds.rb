@@ -7,13 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-puts "Clearing database"
+puts "Clearing database..."
 
 Booking.destroy_all
 Listing.destroy_all
 User.destroy_all
 
-puts "start creating data"
+puts "Creating data...."
 
 host0 = User.create(
   first_name: "host0",
@@ -181,4 +181,4 @@ Booking.create(
   payment: "Visa"
 )
 
-puts "completed"
+puts "Data created!"
