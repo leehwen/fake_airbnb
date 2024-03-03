@@ -6,65 +6,7 @@
       </div>
 
       <div class="results-grid">
-        <% carousel_id = 0 %>
-        <% @listings.each do |listing| %>
-          <% carousel_id += 1 %>
-          <%= link_to listing_path(listing), class: "text-decoration-none text-dark", :action => 'go' do%>
-          <div class="grid-item">
-            <div id="carouselExampleControls<%= carousel_id %>" class="carousel slide" data-bs-interval="false">
-              <div class="carousel-inner">
-                <% if listing.images.attached? %>
-                  <div class="carousel-item active">
-                    <%= cl_image_tag listing.images[0].key, class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item active">
-                    <%= cl_image_tag listing.images[1].key, class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item active">
-                    <%= cl_image_tag listing.images[2].key, class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item active">
-                    <%= cl_image_tag listing.images[3].key, class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item active">
-                    <%= cl_image_tag listing.images[4].key, class: "listing-image" %>
-                  </div>
-                <% else %>
-                  <div class="carousel-item active">
-                    <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
-                  </div>
-                  <div class="carousel-item">
-                    <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
-                  </div>
-                <% end %>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls<%= carousel_id %>" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls<%= carousel_id %>" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-            <p class="listing-location"><%= listing.location.titleize %></p>
-            <p>
-              <%= listing.no_of_rooms %> room
-                <br>
-              $<%= listing.price_per_night %> SGD per night
-            </p>
-          </div>
-          <% end %>
-        <% end %>
+        <%= render 'listing_item', listing: @listings %>
       </div>
     </div>
 
