@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="results container-fluid">
   <div class="row">
     <div class="col-7">
       <div>
@@ -68,8 +68,10 @@
       </div>
     </div>
 
-    <div class="col-5 sticky-map">
-      <%= render '/shared/map', marker: @markers %>
+    <div class="col-5">
+      <div class="results-map sticky-top">
+        <%= render '/shared/map', marker: @markers %>
+      </div>
     </div>
 
   </div>
