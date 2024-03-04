@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_01_084512) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_04_045723) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_084512) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_favourites_on_listing_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "category", null: false
     t.integer "no_of_rooms", null: false
@@ -91,5 +100,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_084512) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "listings"
   add_foreign_key "bookings", "users"
+  add_foreign_key "favourites", "listings"
+  add_foreign_key "favourites", "users"
   add_foreign_key "listings", "users"
 end
