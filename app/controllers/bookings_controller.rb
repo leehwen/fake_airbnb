@@ -1,6 +1,14 @@
 class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
+    @active_bookings = @bookings.where('start_date >= ?', Date.today)
+    @markers = @active_bookings.map do |booking|
+      {
+        lat: booking.listing.latitude,
+        lng: booking.listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { booking: })
+      }
+    end
   end
 
   def show
