@@ -24,19 +24,19 @@
         <% else %>
           <% destination = (10..19).to_a.sample(5) %>
           <div class="carousel-item active">
-            <%= cl_image_tag("destination_#{(destination[0])}", class: "listing-image") %>
+            <%= image_tag("destination_#{(destination[0])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= cl_image_tag("destination_#{(destination[1])}", class: "listing-image") %>
+            <%= image_tag("destination_#{(destination[1])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= cl_image_tag("destination_#{(destination[2])}", class: "listing-image") %>
+            <%= image_tag("destination_#{(destination[2])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= cl_image_tag("destination_#{(destination[3])}", class: "listing-image") %>
+            <%= image_tag("destination_#{(destination[3])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= cl_image_tag("destination_#{(destination[4])}", class: "listing-image") %>
+            <%= image_tag("destination_#{(destination[4])}.jpg", class: "listing-image") %>
           </div>
         <% end %>
       </div>
