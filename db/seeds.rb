@@ -45,10 +45,10 @@ guest1 = User.create(
 
 listing = Listing.create(
   user: host0,
-  title: "Lorem nulla deserunt adipisicing anim duis minim cillum esse incididunt mollit ad aliqua cillum.",
-  subtitle: "nisi ut cillum culpa",
+  title: "Boat Quay Studio",
+  subtitle: "Room in aparthotel in Singapore",
   no_of_rooms: 1,
-  location: "raffles place, Singapore",
+  location: "6 Eu Tong Sen Street, Singapore 059817",
   price_per_night: 200,
   category: "Condo",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
@@ -57,20 +57,20 @@ listing = Listing.create(
 
 listing1 = Listing.create(
   user: host0,
-  title: "Amet mollit excepteur non qui est et minim.",
-  subtitle: "dolore ea ut aliquip",
+  title: "Shipping Container 4 @ One-North",
+  subtitle: "Entire home in Singapore",
   no_of_rooms: 3,
-  location: "18 Raffles Quay, Singapore 048582",
+  location: "77 Ayer Rajah Crescent, Singapore 139954",
   price_per_night: 800,
-  category: "Condo",
+  category: "Hotel",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 3
 )
 
 listing2 = Listing.create(
   user: host0,
-  title: "Lorem officia dolor nisi tempor irure est.",
-  subtitle: "nulla mollit labore velit",
+  title: "Home on the subway, no more than 3 min walk to the subway mall",
+  subtitle: "Room in Singapore",
   no_of_rooms: 2,
   location: "85 Bedok North Street 4, Singapore 460085",
   price_per_night: 200,
@@ -81,35 +81,35 @@ listing2 = Listing.create(
 
 listing3 = Listing.create(
   user: host1,
-  title: "Dolore anim velit incididunt voluptate laborum consequat.",
-  subtitle: "dolore eiusmod qui in",
+  title: "Budget short stay",
+  subtitle: "Private room in rental unit in Singapore",
   no_of_rooms: 4,
-  location: "Woodlands, Singapore",
-  price_per_night: 500,
-  category: "Condo",
-  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+  location: "354 Woodlands Avenue 5, Singapore 730354",
+  price_per_night: 100,
+  category: "HDB",
+  description: "Close to Hospital, Park, shopping & eateries. Room has wall fan, writing desk, just a simple room good for short budget stay.",
   no_of_guests: 4
 )
 
 listing4 = Listing.create(
   user: host1,
-  title: "Nulla cillum ad magna ipsum.",
-  subtitle: "qui amet pariatur commodo",
+  title: "Spacious Room 1 @ Jurong West Near NTU",
+  subtitle: "Room in Singapore",
   no_of_rooms: 7,
-  location: "Changi, Singapore",
+  location: "21 Lien Ying Chow Dr, Singapore 637296",
   price_per_night: 100,
-  category: "Condo",
+  category: "HDB",
   description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
   no_of_guests: 7
 )
 
 listing5 = Listing.create(
   user: host1,
-  title: "Non enim sint fugiat nisi deserunt Lorem nulla irure irure labore veniam ut.",
-  subtitle: "do occaecat in non",
+  title: "Bungalow in Sentosa Cove",
+  subtitle: "Entire house with sea view",
   no_of_rooms: 3,
-  location: "sentosa, Singapore",
-  price_per_night: 800,
+  location: "1 Cove Avenue, Singapore 098537",
+  price_per_night: 900,
   category: "Condo",
   description: "Posh location at Sentosa cove.",
   no_of_guests: 3
@@ -117,13 +117,37 @@ listing5 = Listing.create(
 
 listing6 = Listing.create(
   user: host1,
-  title: "Non enim sint fugiat nisi deserunt Lorem nulla irure irure labore veniam ut.",
-  subtitle: "quis mollit sint enim",
+  title: "TripleOne. A cozy 3-bedroom apartment in Orchard",
+  subtitle: "Entire rental unit in Somerset",
   no_of_rooms: 2,
-  location: "Orchard, Singapore",
+  location: "313 Orchard Road, Singapore 238895",
   price_per_night: 650,
   category: "Condo",
   description: "Nice condo near Orchard road shopping belt",
+  no_of_guests: 2
+)
+
+listing7 = Listing.create(
+  user: host1,
+  title: "Village Hotel Changi-Sup10% OFF",
+  subtitle: "Room in hotel in Singapore",
+  no_of_rooms: 1,
+  location: "1 Netheravon Rd, Singapore 508502",
+  price_per_night: 220,
+  category: "Hotel",
+  description: "Escape from the hustle and bustle of city life and live like a local the natural way at Village Hotel Changi. Located at the east end of Singapore and within the charming and laidback Changi district, the hotel is indeed a breath of fresh air from the usual city hotels.",
+  no_of_guests: 2
+)
+
+listing8 = Listing.create(
+  user: host1,
+  title: "Jiujuyuan Cottage",
+  subtitle: "Room in Singapore",
+  no_of_rooms: 1,
+  location: "5 Tampines Avenue 3, Singapore 529705",
+  price_per_night: 130,
+  category: "HDB",
+  description: "Welcome to our brand new apartment in Tampini!Here, you can make your stay as comfortable as possible.",
   no_of_guests: 2
 )
 
