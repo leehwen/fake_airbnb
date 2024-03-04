@@ -51,7 +51,11 @@ listing = Listing.create(
   location: "6 Eu Tong Sen Street, Singapore 059817",
   price_per_night: 200,
   category: "Condo",
-  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+  Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+  Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+  Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+  Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 1
 )
 
@@ -63,7 +67,11 @@ listing1 = Listing.create(
   location: "77 Ayer Rajah Crescent, Singapore 139954",
   price_per_night: 800,
   category: "Hotel",
-  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 3
 )
 
@@ -75,7 +83,11 @@ listing2 = Listing.create(
   location: "85 Bedok North Street 4, Singapore 460085",
   price_per_night: 200,
   category: "HDB",
-  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 2
 )
 
@@ -87,7 +99,11 @@ listing3 = Listing.create(
   location: "354 Woodlands Avenue 5, Singapore 730354",
   price_per_night: 100,
   category: "HDB",
-  description: "Close to Hospital, Park, shopping & eateries. Room has wall fan, writing desk, just a simple room good for short budget stay.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 4
 )
 
@@ -99,7 +115,11 @@ listing4 = Listing.create(
   location: "21 Lien Ying Chow Dr, Singapore 637296",
   price_per_night: 100,
   category: "HDB",
-  description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 7
 )
 
@@ -111,7 +131,11 @@ listing5 = Listing.create(
   location: "1 Cove Avenue, Singapore 098537",
   price_per_night: 900,
   category: "Condo",
-  description: "Posh location at Sentosa cove.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 3
 )
 
@@ -123,7 +147,11 @@ listing6 = Listing.create(
   location: "313 Orchard Road, Singapore 238895",
   price_per_night: 650,
   category: "Condo",
-  description: "Nice condo near Orchard road shopping belt",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 2
 )
 
@@ -135,7 +163,11 @@ listing7 = Listing.create(
   location: "1 Netheravon Rd, Singapore 508502",
   price_per_night: 220,
   category: "Hotel",
-  description: "Escape from the hustle and bustle of city life and live like a local the natural way at Village Hotel Changi. Located at the east end of Singapore and within the charming and laidback Changi district, the hotel is indeed a breath of fresh air from the usual city hotels.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 2
 )
 
@@ -147,7 +179,11 @@ listing8 = Listing.create(
   location: "5 Tampines Avenue 3, Singapore 529705",
   price_per_night: 130,
   category: "HDB",
-  description: "Welcome to our brand new apartment in Tampini!Here, you can make your stay as comfortable as possible.",
+  description: "Aliquip non esse cupidatat culpa. Anim et nisi deserunt incididunt fugiat. Nisi labore voluptate elit dolore enim cillum eiusmod aliqua magna. Cupidatat incididunt dolor incididunt exercitation enim veniam. Elit eu ad do irure nostrud non ipsum ex nostrud dolore ut irure.
+    Aliqua est incididunt dolor anim ut fugiat elit dolore. Velit minim elit tempor nisi ipsum cillum nulla ex veniam. Sit excepteur ex et irure. Exercitation adipisicing adipisicing commodo deserunt ad id ullamco proident voluptate ea magna.
+    Dolore laboris et eu quis cupidatat. Veniam sunt qui dolore ad magna ex consequat occaecat do veniam qui aute pariatur tempor. Officia pariatur culpa minim consectetur proident deserunt. Ipsum consequat eu fugiat mollit incididunt consectetur sunt Lorem eu Lorem. Mollit quis sint aliqua anim ipsum magna non cillum excepteur fugiat.
+    Tempor duis ea velit consequat. Pariatur nisi dolor minim ipsum consectetur aute in sunt enim. Cupidatat exercitation dolore irure duis laboris ullamco esse ex non aliquip fugiat irure. Eiusmod enim duis mollit mollit.
+    Labore ea eu pariatur eiusmod minim et sunt laboris eu veniam aliqua laborum tempor est reprehenderit. Dolore sunt dolor laboris nulla consectetur sunt aliqua. Lorem aliqua velit fugiat dolore deserunt non ea labore occaecat reprehenderit aliquip sint aliqua. Id aliquip et laborum veniam nisi duis in sit fugiat Lorem nulla eiusmod.",
   no_of_guests: 2
 )
 
