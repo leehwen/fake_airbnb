@@ -5,133 +5,29 @@
         <h1 class="mb-5">Bookings</h1>
         <div>
           <% if @bookings.count == 0 %>
-            <div class="card">
-                <div>
-                  <div class="fs-5 m-3">
-                    <div>No trips booked ... yet!</div>
-                    <div class="fs-6 my-3 text-body-tertiary">Time to dust off your bags and start planning your next adventure</div>
-                    <div>
-                      <%= link_to "Start searching", listings_path, class: "text-decoration-none cta-button" %>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <%= render "nobooking" %>
           <% else %>
             <% upcoming = @bookings.select { |booking| (booking.start_date >= Date.today) && booking.host_approved == true } %>
             <% if upcoming.count > 0 %>
             <h3 class="my-4">Trips booked</h3>
-              <% upcoming.each do |booking| %>
-              <div>
-                <%= link_to booking_path(booking), class: "text-decoration-none text-dark", :action => 'go' do%>
-                  <div class="d-flex">
-                    <div>
-                      <% if booking.listing.images.attached? %>
-                        <div class="border smaller-card" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
-                      <% else %>
-                        <div class="border smaller-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
-                      <% end %>
-                    </div>
-                    <div>
-                      <div class="px-3 mb-4 fs-6">
-                        <div><%= booking.listing.location.split(',')[1].strip %></div>
-                        <div class="text-body-tertiary"><%= booking.listing.user.first_name %></div>
-                        <div class="text-body-tertiary"><%= "#{booking.start_date} to #{booking.end_date}"%></div>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <% end %>
+              <%= render "bookingcards", bookings: upcoming %>
             <% else %>
-              <div class="card">
-                <div>
-                  <div class="fs-5 m-3">
-                    <div>Go for another Sabbatical!</div>
-                    <div class="fs-6 my-3 text-body-tertiary">Time to dust off your bags and start planning your next adventure</div>
-                    <div>
-                      <%= link_to "Start searching", listings_path, class: "text-decoration-none cta-button" %>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <%= render "nobooking" %>
             <% end %>
             <% pending = @bookings.select { |booking| (booking.start_date >= Date.today) && booking.host_approved.nil? } %>
             <% if pending.count > 0 %>
               <h3 class="my-4">Pending acceptance</h3>
-              <% pending.each do |booking| %>
-                <div>
-                  <%= link_to booking_path(booking), class: "text-decoration-none text-dark", :action => 'go' do%>
-                    <div class="d-flex">
-                      <div>
-                        <% if booking.listing.images.attached? %>
-                          <div class="border smaller-card" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
-                        <% else %>
-                          <div class="border smaller-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
-                        <% end %>
-                      </div>
-                      <div>
-                        <div class="px-3 mb-4 fs-6">
-                          <div><%= booking.listing.location.split(',')[1].strip %></div>
-                          <div class="text-body-tertiary"><%= booking.listing.user.first_name %></div>
-                          <div class="text-body-tertiary"><%= "#{booking.start_date} to #{booking.end_date}"%></div>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
+              <%= render "bookingcards", bookings: pending %>
             <% end %>
             <% past = @bookings.select { |booking| (booking.start_date < Date.today) && booking.host_approved == true } %>
             <% if past.count > 0 %>
               <h3 class="my-4">Where you've been</h3>
-              <% past.each do |booking| %>
-                <div>
-                  <%= link_to booking_path(booking), class: "text-decoration-none text-dark", :action => 'go' do%>
-                    <div class="d-flex">
-                      <div>
-                        <% if booking.listing.images.attached? %>
-                          <div class="border smaller-card" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
-                        <% else %>
-                          <div class="border smaller-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
-                        <% end %>
-                      </div>
-                      <div>
-                        <div class="px-3 mb-4 fs-6">
-                          <div><%= booking.listing.location.split(',')[1].strip %></div>
-                          <div class="text-body-tertiary"><%= booking.listing.user.first_name %></div>
-                          <div class="text-body-tertiary"><%= "#{booking.start_date} to #{booking.end_date}"%></div>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
+              <%= render "bookingcards", bookings: past %>
             <% end %>
             <% cancelled = @bookings.select { |booking| booking.host_approved == false } %>
             <% if cancelled.count > 0 %>
               <h3 class="my-4">Cancelled trips</h3>
-              <% cancelled.each do |booking| %>
-                <div>
-                  <%= link_to booking_path(booking), class: "text-decoration-none text-dark", :action => 'go' do%>
-                    <div class="d-flex">
-                      <div>
-                        <% if booking.listing.images.attached? %>
-                          <div class="border smaller-card" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
-                        <% else %>
-                          <div class="border smaller-card" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
-                        <% end %>
-                      </div>
-                      <div>
-                        <div class="px-3 mb-4 fs-6">
-                          <div><%= booking.listing.location.split(',')[1].strip %></div>
-                          <div class="text-body-tertiary"><%= booking.listing.user.first_name %></div>
-                          <div class="text-body-tertiary"><%= "#{booking.start_date} to #{booking.end_date}"%></div>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
+              <%= render "bookingcards", bookings: cancelled %>
             <% end %>
           <% end %>
         </div>

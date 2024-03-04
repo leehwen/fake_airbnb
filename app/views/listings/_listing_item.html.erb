@@ -23,23 +23,25 @@
             <%= cl_image_tag listing.images[4].key, class: "listing-image" %>
           </div>
         <% else %>
+          <% destination = (10..19).to_a.sample(5) %>
           <div class="carousel-item active">
-            <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
+            <%= image_tag("destination_#{(destination[0])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
+            <%= image_tag("destination_#{(destination[1])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
+            <%= image_tag("destination_#{(destination[2])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
+            <%= image_tag("destination_#{(destination[3])}.jpg", class: "listing-image") %>
           </div>
           <div class="carousel-item">
-            <%= image_tag 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjgyNDc0NzIxNDE2NTI5NTIy/original/c329a04a-51b7-477d-9fc7-7aa4a3a998e7.jpeg?im_w=720', class: "listing-image" %>
+            <%= image_tag("destination_#{(destination[4])}.jpg", class: "listing-image") %>
           </div>
         <% end %>
       </div>
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls<%= carousel_id %>" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

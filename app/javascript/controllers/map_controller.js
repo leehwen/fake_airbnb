@@ -22,7 +22,21 @@ export default class extends Controller {
     this.#fitMapToMarkers();
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
+
+    this.map.on('dragend', () => {
+      this.map.getBounds()["_ne"];
+      this.map.getBounds()["_sw"]
+      this.where
+    })
+
+    // User.where(["name = :name and email = :email", { name: "Joe", email: "joe@example.com" }])
+
+    this.map.on('zoomend', () => {
+      console.log(this.map.getBounds());
+    })
   }
+
+
 
   #addMarkersToMap() {
     this.markerValue.forEach((marker) => {
