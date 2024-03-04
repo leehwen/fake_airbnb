@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :listings do
     collection do
       get 'results'
+      get 'locationresults'
     end
 
     resources :favourites, only: %i[create]
