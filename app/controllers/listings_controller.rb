@@ -3,11 +3,15 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    @listings = @listings.where("category ILIKE ?", "%#{params[:category]}%") if params[:category].present?
+    @listings = @listings.where("no_of_rooms = ?", params[:no_of_rooms]) if params[:no_of_rooms].present?
+    @listings = @listings.where("price_per_night <= ?", params[:maxprice]) if params[:maxprice].present?
+    @listings = @listings.where("price_per_night >= ?", params[:minprice]) if params[:minprice].present?
   end
 
   def results
     @listings = Listing.near(params[:query], 10)
-    @markers = @listings.geocoded.map do | listing |
+    @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
         lng: listing.longitude,
