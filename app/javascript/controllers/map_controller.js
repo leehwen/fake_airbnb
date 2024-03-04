@@ -24,19 +24,23 @@ export default class extends Controller {
       mapboxgl: mapboxgl }));
 
     this.map.on('dragend', () => {
-      this.map.getBounds()["_ne"];
-      this.map.getBounds()["_sw"]
-      this.where
-    })
+      const swCorner = this.map.getBounds().toArray()[0];
+      const neCorner = this.map.getBounds().toArray()[1];
+      console.log(swCorner, neCorner);
 
-    // User.where(["name = :name and email = :email", { name: "Joe", email: "joe@example.com" }])
+      // fetch("/listings/locationresults") is this correct way to call listings_controller?
+        // .then(response => response.json())
+        // .then((data) => {
+        //   console.log(data);
+        // });
+    })
 
     this.map.on('zoomend', () => {
-      console.log(this.map.getBounds());
-    })
+      const swCorner = this.map.getBounds().toArray()[0];
+      const neCorner = this.map.getBounds().toArray()[1];
+      console.log(swCorner, neCorner)
+      });
   }
-
-
 
   #addMarkersToMap() {
     this.markerValue.forEach((marker) => {
