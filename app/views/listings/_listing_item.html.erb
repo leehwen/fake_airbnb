@@ -1,8 +1,9 @@
 <% carousel_id = 0 %>
 <% @listings.each do |listing| %>
+  <% fav_list = listing.favourites.map do |fav| fav.user end %> 
   <% carousel_id += 1 %>
-  <%= link_to listing_path(listing), class: "text-decoration-none text-dark", :action => 'go' do%>
-  <div class="grid-item">
+  <%= link_to listing_path(listing), class: "text-decoration-none text-dark", :action => 'go' do %>
+  <div class="grid-item position-relative">
     <div id="carouselExampleControls<%= carousel_id %>" class="carousel slide" data-bs-interval="false">
       <div class="carousel-inner">
         <% if listing.images.attached? %>
@@ -47,6 +48,13 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+    <div class="position-absolute childicon" data-controller="favourites" data-action="click->favourites#fire" data-favourites-link-value="<%= listing_favourites_path(listing)  %>">
+        <% if fav_list.include? current_user %>
+          <i class="fa-solid fa-heart"></i>
+        <% else %>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
     </div>
     <p class="listing-location"><%= listing.location.titleize %></p>
     <p>

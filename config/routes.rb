@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     collection do
       get 'results'
     end
+
+    resources :favourites, only: %i[create]
   end
   resources :bookings, only: %i[index show new create destroy] do
     collection do
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
   end
 
   get "/dashboard", to: "users#dashboard"
+  # get "/favourites", to: "users#favourites"
 end

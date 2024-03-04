@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     @pending_bookings = current_user.bookings_as_host.where(host_approved: nil)
     @listings = current_user.listings
   end
+
+  def favourites
+    
+  end
 end

@@ -9,8 +9,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(typeof this.feesValue);
-    console.log(this.feesValue);
   }
 
   calc () {
