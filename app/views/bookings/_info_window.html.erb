@@ -1,13 +1,15 @@
 <%= link_to listing_path(booking.listing), class: "text-decoration-none text-dark", :action => 'go' do %>
-  <div class="p-0">
-    <% if booking.listing.images.attached? %>
-      <div class="border small-card small-card-round" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
-    <% else %>
-      <div class="border small-card small-card-round" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
-    <% end %>
-  </div>
-  <div>
-    <div class="my-2 ms-1 fs-6"><%= booking.start_date %></div>
-    <div class="my-2 ms-1"><%= booking.listing.location %></div>
+  <div style="width: 220px">
+    <div class="p-0">
+      <% if booking.listing.images.attached? %>
+        <div class="border small-card small-card-round" style="background-image:url('<%= cl_image_path(booking.listing.images[0].key) %>')"></div>
+      <% else %>
+        <div class="border small-card small-card-round" style="background-image:url('<%= asset_path('paris.jpg')%>')"></div>
+      <% end %>
+    </div>
+    <div>
+      <div class="my-2 ms-1 fs-6"><%= booking.start_date %></div>
+      <div class="my-2 ms-1"><%= booking.listing.location %></div>
+    </div>
   </div>
 <% end %>
