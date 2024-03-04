@@ -1,7 +1,10 @@
 class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
-    @active_bookings = @bookings.where('start_date >= ?', Date.today)
+    # sql_subquery = <<~SQL
+    #   start_date
+    # SQL
+    @active_bookings = @bookings.where('start_date >= ?', Date.today).where(host_approved: true).or(@bookings.where(host_approved: nil))
     @markers = @active_bookings.map do |booking|
       {
         lat: booking.listing.latitude,
