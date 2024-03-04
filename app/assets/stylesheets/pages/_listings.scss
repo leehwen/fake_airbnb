@@ -21,6 +21,11 @@
   }
 }
 
+.formshort {
+  position: sticky;
+  top: 17.5vh;
+}
+
 @media (max-width: 1080px) {
   /* For a screen < 720px, this CSS will be read */
   .grid-container {
