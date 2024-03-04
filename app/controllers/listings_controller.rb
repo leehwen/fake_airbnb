@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   end
 
   def results
-    @listings = Listing.near(params[:query], 5)
+    @listings = Listing.near(params[:query], 10)
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
