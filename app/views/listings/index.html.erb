@@ -1,3 +1,62 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="cta-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Select Filter
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Filters</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/listings" method="get">
+        <div class="modal-body">
+          <p>Category</p>
+            <label for="condo">Condo</label>
+            <input type="radio" id="condo" name="category" value="condo">
+            <label for="hdb">HDB</label>
+            <input type="radio" id="hdb" name="category" value="hdb">
+            <label for="bungalow">Bungalow</label>
+            <input type="radio" id="bungalow" name="category" value="bungalow">
+            <label for="hotel">Hotel</label>
+            <input type="radio" id="hotel" name="category"><br>
+          <p style="margin-top:16px">No. of rooms</p>
+            <label for="1">1</label>
+            <input type="radio" id="1" name="no_of_rooms" value="1">
+            <label for="2">2</label>
+            <input type="radio" id="2" name="no_of_rooms" value="2">
+            <label for="3">3</label>
+            <input type="radio" id="3" name="no_of_rooms" value="3">
+            <label for="4">4</label>
+            <input type="radio" id="4" name="no_of_rooms" value="4">
+            <label for="5">5</label>
+            <input type="radio" id="5" name="no_of_rooms" value="5">
+            <label for="6">6</label>
+            <input type="radio" id="6" name="no_of_rooms" value="6">
+            <label for="7">7</label>
+            <input type="radio" id="7" name="no_of_rooms" value="7">
+            <label for="8">8</label>
+            <input type="radio" id="8" name="no_of_rooms" value="8">
+            <label for="9">9</label>
+            <input type="radio" id="9" name="no_of_rooms" value="9">
+            <p style="margin-top:16px">Price per night</p>
+            <label for="minprice">Minimum Price</label>
+            <input type="text" id="minprice" name="minprice"><br>
+            <label for="maxprice">Maximum Price</label>
+            <input type="text" id="maxprice" name="maxprice">
+            <%# <input type="submit" value="Submit"> %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" value="Submit" class="btn btn-outline-success">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="grid-container my-5 pb-5">
   <%= render 'listing_item', listing: @listings %>
 </div>
