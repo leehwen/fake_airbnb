@@ -21,15 +21,19 @@ class ListingsController < ApplicationController
   end
 
   def locationresults
-    sw_corner = [40.71, 100.23] # to pass in the coords from JS map controller
-    ne_corner = [36.12, 88.65]  # to pass in the coords from JS map controller
+    sw_corner = JSON.parse(params[:sw])
+    ne_corner = JSON.parse(params[:ne])
     @listings = Listing.within_bounding_box(sw_corner, ne_corner)
-    @markers = @listings.geocoded.map do |listing|
-      {
-        lat: listing.latitude,
-        lng: listing.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
-      }
+    # @markers = @listings.geocoded.map do |listing|
+    #   {
+    #     lat: listing.latitude,
+    #     lng: listing.longitude,
+    #     info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+    #   }
+    # end
+
+    respond_to do |format|
+      format.json { render json: {sw_corner:, ne_corner:} }
     end
   end
 
