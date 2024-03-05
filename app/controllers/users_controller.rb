@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   end
 
   def favourites
-    
+    fav = current_user.favourites
+    fav_listing = fav.map do |fav| fav.listing_id end
+
+    @listings = Listing.where(id: fav_listing)
   end
 end

@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   end
 
   get "/dashboard", to: "users#dashboard"
-  # get "/favourites", to: "users#favourites"
+  get "/favourites", to: "users#favourites"
 end

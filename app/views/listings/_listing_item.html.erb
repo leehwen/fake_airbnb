@@ -53,9 +53,9 @@
     </div>
     <div class="position-absolute childicon" data-controller="favourites" data-action="click->favourites#fire" data-favourites-link-value="<%= listing_favourites_path(listing)  %>">
         <% if fav_list.include? current_user %>
-          <i class="fa-solid fa-heart"></i>
+          <span class="childiconp" data-favourites-target="heart"><i class="fa-solid fa-heart"></i></span>
         <% else %>
-          <i class="fa-regular fa-heart"></i>
+          <span class="childiconn" data-favourites-target="heart"><i class="fa-regular fa-heart"></i></span>
         <% end %>
     </div>
     <p class="listing-location"><%= listing.location.titleize %></p>

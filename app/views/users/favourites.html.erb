@@ -1,0 +1,13 @@
+<div class="container">
+  <% @listings.each do |listing| %>
+    <div class="row">
+      <div class="col-4 border m-3">
+        <div class="card">
+          <p><strong>Title:</strong> <%= listing.title %></p>
+          <p><strong>Subtitle:</strong>  <%= listing.subtitle %></p>
+          <p><strong>Price per night:</strong>  <%= listing.price_per_night %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
