@@ -24,26 +24,39 @@ export default class extends Controller {
       mapboxgl: mapboxgl }));
 
     this.map.on('dragend', () => {
-      const swCorner = this.map.getBounds().toArray()[0];
-      const neCorner = this.map.getBounds().toArray()[1];
+      const swCorner = this.map.getBounds().toArray()[0].reverse();
+      const neCorner = this.map.getBounds().toArray()[1].reverse();
 
       fetch(`/listings/locationresults?sw=${JSON.stringify(swCorner)}&ne=${JSON.stringify(neCorner)}`)
         .then(response => response.json())
         .then((data) => {
           console.log(data);
+          data.forEach((marker) => {
+            const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+            new mapboxgl.Marker()
+            .setLngLat([ marker.lng, marker.lat ])
+            .setPopup(popup)
+            .addTo(this.map)
+          });
         });
     })
 
     this.map.on('zoomend', () => {
-      const swCorner = this.map.getBounds().toArray()[0];
-      const neCorner = this.map.getBounds().toArray()[1];
+      const swCorner = this.map.getBounds().toArray()[0].reverse();
+      const neCorner = this.map.getBounds().toArray()[1].reverse();
 
       fetch(`/listings/locationresults?sw=${JSON.stringify(swCorner)}&ne=${JSON.stringify(neCorner)}`)
         .then(response => response.json())
         .then((data) => {
           console.log(data);
+          data.forEach((marker) => {
+            const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+            new mapboxgl.Marker()
+            .setLngLat([ marker.lng, marker.lat ])
+            .setPopup(popup)
+            .addTo(this.map)
+          });
         });
-
       });
   }
 
