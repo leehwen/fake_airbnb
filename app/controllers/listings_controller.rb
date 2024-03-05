@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :results]
+  skip_before_action :authenticate_user!, only: [:index, :show, :results, :locationresults]
 
   def index
     @listings = Listing.all
@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
       {
         lat: listing.latitude,
         lng: listing.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+        info_window_html: render_to_string(partial: "info_window", locals: { listing: })
       }
     end
   end
@@ -24,16 +24,16 @@ class ListingsController < ApplicationController
     sw_corner = JSON.parse(params[:sw])
     ne_corner = JSON.parse(params[:ne])
     @listings = Listing.within_bounding_box(sw_corner, ne_corner)
-    # @markers = @listings.geocoded.map do |listing|
-    #   {
-    #     lat: listing.latitude,
-    #     lng: listing.longitude,
-    #     info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
-    #   }
-    # end
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { listing: })
+      }
+    end
 
     respond_to do |format|
-      format.json { render json: {sw_corner:, ne_corner:} }
+      format.json { render json: @markers }
     end
   end
 
